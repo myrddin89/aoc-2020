@@ -1,7 +1,6 @@
 ##
 cd(@__DIR__())
 using IterTools: groupby
-using Statistics: mean
 using Combinatorics: powerset
 jolts = map(eachline("input.txt")) do line
     parse(Int, line)
@@ -45,14 +44,27 @@ function find_pivot(chain)
     end |> collect
 end
 function count_chains(chain, ns)
-    ss = powerset(ns)
-    cs = Iterators.filter(ss) do s
-        c′ = copy(chain)
-        check_chain(deleteat!(c′, s))
-    end |> collect
-    length(cs)
+    gs = []
+    cur = Int[ns[1]]
+    for n ∈ ns[2:end]
+        if n - last(cur) == 1
+            push!(cur, n)
+        else
+            push!(gs, cur)
+            cur = [n]
+        end
+    end
+    push!(gs, cur)
+    prod(gs) do g
+        length(g) == 1 && return 2
+        ss = powerset(g, 2)
+        1 + length(g) + count(ss) do s
+            c′ = copy(chain)
+            check_chain(deleteat!(c′, s))
+        end
+    end
 end;
 
 ##
 ns = find_pivot(chain)
-#count_chains(chain, ns)
+count_chains(chain, ns)

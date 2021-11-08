@@ -1,6 +1,3 @@
-tags
-workspace.code-workspace
-.psc-ide-port
 /bower_components/
 /node_modules/
 /.pulp-cache/

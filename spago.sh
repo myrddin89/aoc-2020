@@ -9,6 +9,6 @@ fi
 
 export INIT_CWD=$(pwd)
 cd AdventOfCode.purs
-npx spago run -p "$entry_point"
+npx spago run -m "$entry_point"
 cd $INIT_CWD
 unset INIT_CWD

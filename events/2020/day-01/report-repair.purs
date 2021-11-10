@@ -1,4 +1,4 @@
-module Main where
+module ReportRepair where
 
 import Prelude
 import Effect (Effect)
@@ -8,4 +8,4 @@ import Node.FS.Sync (readTextFile)
 
 main :: Effect Unit
 main = do
-  log =<< readTextFile UTF8 "input.txt"
+  log =<< readTextFile UTF8 "../events/2020/day-01/input.txt"

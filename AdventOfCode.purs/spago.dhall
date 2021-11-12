@@ -14,10 +14,12 @@ to generate this file without the comments in this block.
 , name = "advent-of-code"
 , dependencies =
   [ "console"
+  , "csv"
   , "effect"
   , "lists"
   , "node-buffer"
   , "node-fs"
+  , "parsing"
   , "pathy"
   , "prelude"
   , "psci-support"

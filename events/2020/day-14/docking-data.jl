@@ -49,3 +49,24 @@ end;
 run_program(prog)
 
 ## PARTE 2
+function parse_input_v2(input)
+    map(eachline(input)) do line
+        m = match(maskrx, line)
+        isnothing(m) || return (type=:mask, address=nothing, value=m[1])
+        m = match(memrx, line)
+        isnothing(m) || return (type=:mem, address=parse(UInt64, m[1]), value=parse(UInt64, m[2]))
+        return missing
+    end |> skipmissing |> collect
+end
+function parse_mask_v2(s, ::Type{T} = UInt64) where {T<:Unsigned}
+    mask = zero(T)
+    map(enumerate(reverse(s))) do (i, c)
+        c == '1' && return Base.Fix2(|, (mask0 | bit1) << (i-1))
+        return missing
+    end |> skipmissing |> collect
+end
+
+##
+prog2 = parse_input_v2("input.txt");
+
+##

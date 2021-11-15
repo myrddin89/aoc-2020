@@ -10,11 +10,10 @@ When creating a new Spago project, you can use
 `spago init --no-comments` or `spago init -C`
 to generate this file without the comments in this block.
 -}
-{ sources = [ "../events/**/*.purs" ]
+{ sources = [ "src/**/*.purs" ]
 , name = "advent-of-code"
 , dependencies =
   [ "console"
-  , "csv"
   , "effect"
   , "lists"
   , "node-buffer"

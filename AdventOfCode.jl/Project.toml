@@ -2,3 +2,7 @@ name = "AdventOfCode"
 uuid = "e51941fd-43c5-468d-84cd-46e667aae064"
 authors = ["Nicola Mosco <nicola.mosco@gmail.com>"]
 version = "0.1.0"
+
+[deps]
+DataStructures = "864edb3b-99cc-5e75-8d2d-829cb0a9cfe8"
+OrderedCollections = "bac558e1-5e72-5ebc-8fee-abe8a469f55d"

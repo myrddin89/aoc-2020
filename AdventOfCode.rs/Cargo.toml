@@ -1,0 +1,13 @@
+[package]
+name = "AdventOfCode"
+version = "0.1.0"
+edition = "2018"
+
+[[bin]]
+name = "monster-messages"
+path = "../events/2020/day-19/monster-messages.rs"
+test = false
+bench = false
+
+
+[dependencies]

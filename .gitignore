@@ -11,3 +11,4 @@ workspace.code-workspace
 /.purs*
 /.psa*
 /.spago
+target/

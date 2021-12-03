@@ -8,7 +8,7 @@ count(>(0),diff(input))
 
 
 ## PARTE 2
-using DataStructures: nil, cons, list
+using DataStructures: nil, cons
 
 ##
 res = foldl(1:length(input)-2; init=nil()) do l, w

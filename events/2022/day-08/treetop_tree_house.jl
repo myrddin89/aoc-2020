@@ -3,7 +3,7 @@ cd(@__DIR__)
 trees = reduce(eachline("input.txt"), init=zeros(Int, 0, 0)) do a, line
     isempty(a) && return parse.(Int, collect(line))
     hcat(a, parse.(Int, collect(line)))
-end |> permutedims;
+end;
 count(CartesianIndices(trees)) do index
     r, c = index.I
     dirs = (1:r-1,c), (r,1:c-1), (r+1:size(trees,1),c), (r,c+1:size(trees,2))

@@ -2,7 +2,7 @@
 
 julia_version = "1.8.3"
 manifest_format = "2.0"
-project_hash = "2f168af67bd28743e857fdf8781b3fdefce9ed7f"
+project_hash = "9d10f0a15e52d8d17ed497335d274b8cae3f2c75"
 
 [[deps.Adapt]]
 deps = ["LinearAlgebra"]
@@ -15,6 +15,12 @@ uuid = "56f22d72-fd6d-98f1-02f0-08ddc0907c33"
 
 [[deps.Base64]]
 uuid = "2a0f44e3-6c83-55bd-87e4-b1978d98bd5f"
+
+[[deps.CircularArrays]]
+deps = ["OffsetArrays"]
+git-tree-sha1 = "3587fdbecba8c44f7e7285a1957182711b95f580"
+uuid = "7a955b69-7140-5f4e-a0ed-f168c5e2e749"
+version = "1.3.1"
 
 [[deps.Compat]]
 deps = ["Dates", "LinearAlgebra", "UUIDs"]

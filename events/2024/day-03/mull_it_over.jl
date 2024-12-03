@@ -33,12 +33,9 @@ function mull2f(input)
     reduce(eachmatch(reg, input), init=(0, true)) do (result, enabled), m
         m.match == "do()" && return (result, true)
         m.match == "don't()" && return (result, false)
-        if enabled
-            mul = replace(m.match, "mul" => "*") |> Meta.parse |> eval
-            return (result + mul, enabled)
-        else
-            return (result, enabled)
-        end
+        enabled || return (result, enabled)
+        mul = replace(m.match, "mul" => "*") |> Meta.parse |> eval
+        return (result + mul, enabled)
     end |> first
 end
 

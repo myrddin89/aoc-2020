@@ -9,8 +9,8 @@ function make_neighbours(input, l)
     neighbourhood = [CartesianIndex(s1*(l-1), s2*(l-1)) for s1 in [-1, 0, 1] for s2 in [-1, 0, 1] if s1 != 0 || s2 != 0]
 
     neighs = map(indices) do c
-        filter(c .+ neighbourhood) do c
-            i, j = Tuple(c)
+        filter(c .+ neighbourhood) do c′
+            i, j = Tuple(c′)
             i ∈ axes(input, 1) && j ∈ axes(input, 2)
         end
     end
